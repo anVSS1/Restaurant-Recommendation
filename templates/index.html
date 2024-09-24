@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Restaurant Recommender</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='styles.css') }}"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Restaurant Recommendation System</h1>
+      <form action="/recommend" method="POST">
+        <label for="cuisine">Cuisine Preference:</label>
+        <input type="text" name="cuisine" required />
+
+        <label for="price_range">Price Range (0-4):</label>
+        <input type="number" name="price_range" step="0.1" required />
+
+        <label for="cost">Average Cost for Two:</label>
+        <input type="number" name="cost" step="0.1" required />
+
+        <label for="city">City:</label>
+        <input type="text" name="city" required />
+
+        <button type="submit">Get Recommendations</button>
+      </form>
+      <footer>
+        <div class="socials">
+          <a href="https://www.linkedin.com/in/anass-ouzaouit" target="_blank">
+            <img
+              src="{{ url_for('static', filename='linkedin.png') }}"
+              alt="LinkedIn"
+            />
+          </a>
+          <a href="https://github.com/anvss1" target="_blank">
+            <img
+              src="{{ url_for('static', filename='github.png') }}"
+              alt="GitHub"
+            />
+          </a>
+          <a href="https://twitter.com/anvss__" target="_blank">
+            <img
+              src="{{ url_for('static', filename='twitter.png') }}"
+              alt="Twitter"
+            />
+          </a>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

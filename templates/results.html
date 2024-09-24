@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Recommendations</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='styles.css') }}"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Recommended Restaurants</h1>
+      <div class="recommendations">
+        <ul>
+          {% for recommendation in recommendations %}
+          <li class="recommendation-item">
+            <div class="restaurant-details">
+              <strong class="restaurant-name"
+                >{{ recommendation['Restaurant Name'] }}</strong
+              >
+              <span class="cuisines">{{ recommendation['Cuisines'] }}</span>
+              <span class="city">{{ recommendation['City'] }}</span>
+            </div>
+            <div class="rating">
+              <span>Rating: {{ recommendation['Aggregate rating'] }}</span>
+            </div>
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+      <footer>
+        <div class="socials">
+          <a href="https://www.linkedin.com/in/anass-ouzaouit" target="_blank">
+            <img
+              src="{{ url_for('static', filename='linkedin.png') }}"
+              alt="LinkedIn"
+            />
+          </a>
+          <a href="https://github.com/anvss1" target="_blank">
+            <img
+              src="{{ url_for('static', filename='github.png') }}"
+              alt="GitHub"
+            />
+          </a>
+          <a href="https://twitter.com/anvss__" target="_blank">
+            <img
+              src="{{ url_for('static', filename='twitter.png') }}"
+              alt="Twitter"
+            />
+          </a>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>
